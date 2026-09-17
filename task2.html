@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>University Admission Form</title>
+
+        <style>
+
+        /* General Page Styling */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f5f9;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* Main Heading */
+        header {
+            background-color: #1a1515;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+
+            /* CSS Text Properties */
+            text-align: center;
+            text-decoration: underline;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+            line-height: 1.5;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        header p {
+            font-size: 16px;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        /* Sections */
+        .section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        .section h2 {
+            color: #52c2e4;
+            border-bottom: 2px solid #617d92;
+            padding-bottom: 8px;
+
+            /* Text properties */
+            text-align: left;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            word-spacing: 3px;
+        }
+
+        /* Form Layout */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #948585;
+
+            /* Text properties */
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 11px;
+            box-sizing: border-box;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #8ea2b1;
+            box-shadow: 0 0 5px rgba(24, 59, 86, 0.3);
+        }
+
+        /* Radio and Checkbox Styling */
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .options label {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: normal;
+        }
+
+        .options input {
+            width: auto;
+        }
+
+        /* Buttons */
+        .buttons {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background-color: #2d1ad6;
+            color: white;
+        }
+
+        .reset-btn {
+            background-color: #a6b5c9;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+        .reset-btn:hover{
+            background-color:  #2d1ad6;
+        }
+
+        /* Student Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #aaa;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #daabab;
+            color: white;
+
+            /* Text properties */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        /* Media Section */
+        .media-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 2px solid #eea5de;
+            border-radius: 8px;
+        }
+
+        video {
+            width: 100%;
+            max-height: 350px;
+            border-radius: 8px;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        /* Code Display */
+        .code-section {
+            background-color: #1e1e1e;
+            color: #f8f8f2;
+            overflow-x: auto;
+        }
+
+        .code-section h2 {
+            color: white;
+            border-color: white;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: Consolas, monospace;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        code {
+            color: #f8f8f2;
+        }
+
+        /* Footer */
+        footer {
+            background-color:#000000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 0;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+
+            .container {
+                width: 95%;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .options {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 7px;
+            }
+        }
+
+    </style>
+    </head>
+
+    <body>
+
+        <!-- ================= HEADER ================= -->
+
+        <header>
+            <h1>University Admission Form</h1>
+            <p>Apply for admission and become a part of our university
+                community.</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= ADMISSION FORM ================= -->
+
+            <div class="section">
+
+                <h2>Student Admission Form</h2>
+
+                <form action="#" method="post" enctype="multipart/form-data">
+
+                    <!-- Personal Information -->
+                    <h2>Personal Information</h2>
+
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a password"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input
+                            type="date"
+                            id="dob"
+                            name="dob"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gender:</label>
+
+                        <div class="options">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Male"
+                                    required>
+                                Male
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Female">
+                                Female
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Other">
+                                Other
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+
+                    <h2>Contact Information</h2>
+
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@gmail.com"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="03XX-XXXXXXX"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City:</label>
+
+                        <select id="city" name="city" required>
+
+                            <option value>-- Select City --</option>
+                            <option value="Islamabad">Islamabad</option>
+                            <option value="Rawalpindi">Rawalpindi</option>
+                            <option value="Lahore">Lahore</option>
+                            <option value="Karachi">Karachi</option>
+                            <option value="Peshawar">Peshawar</option>
+                            <option value="Quetta">Quetta</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Complete Address:</label>
+
+                        <textarea
+                            id="address"
+                            name="address"
+                            rows="4"
+                            placeholder="Enter your complete address"
+                            required></textarea>
+                    </div>
+
+                    <!-- Academic Information -->
+
+                    <h2>Academic Information</h2>
+
+                    <div class="form-group">
+                        <label for="marks">Previous Marks / Percentage:</label>
+
+                        <input
+                            type="number"
+                            id="marks"
+                            name="marks"
+                            min="0"
+                            max="100"
+                            placeholder="Enter percentage"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="program">Preferred Program:</label>
+
+                        <select
+                            id="program"
+                            name="program"
+                            required>
+
+                            <option value>-- Select Program --</option>
+                            <option value="BS Computer Science">
+                                BS Computer Science
+                            </option>
+
+                            <option value="BS Software Engineering">
+                                BS Software Engineering
+                            </option>
+
+                            <option value="BS Artificial Intelligence">
+                                BS Artificial Intelligence
+                            </option>
+
+                            <option value="BS Data Science">
+                                BS Data Science
+                            </option>
+
+                            <option value="BS Cyber Security">
+                                BS Cyber Security
+                            </option>
+
+                            <option value="BS Information Technology">
+                                BS Information Technology
+                            </option>
+
+                        </select>
+                    </div>
+
+                    <!-- Interests and Skills -->
+
+                    <h2>Interests / Skills</h2>
+
+                    <div class="form-group">
+
+                        <label>
+                            Select your subjects or skills:
+                        </label>
+
+                        <div class="options">
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="Programming">
+                                Programming
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="Web Development">
+                                Web Development
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="Database">
+                                Database
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="Artificial Intelligence">
+                                Artificial Intelligence
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="Data Science">
+                                Data Science
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="Cyber Security">
+                                Cyber Security
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Profile Picture -->
+
+                    <h2>Profile Picture</h2>
+
+                    <div class="form-group">
+
+                        <label for="profile">
+                            Upload Profile Picture:
+                        </label>
+
+                        <input
+                            type="file"
+                            id="profile"
+                            name="profile"
+                            accept="image/*">
+
+                    </div>
+
+                    <!-- Additional Information -->
+
+                    <h2>Additional Information</h2>
+
+                    <div class="form-group">
+
+                        <label for="reason">
+                            Why do you want to join this university?
+                        </label>
+
+                        <textarea
+                            id="reason"
+                            name="reason"
+                            rows="6"
+                            placeholder="Write your reason here..."
+                            required></textarea>
+
+                    </div>
+
+                    <!-- Form Actions -->
+
+                    <div class="buttons">
+
+                        <button
+                            type="submit"
+                            class="submit-btn">
+                            Submit Application
+                        </button>
+
+                        <button
+                            type="reset"
+                            class="reset-btn">
+                            Reset Form
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- ================= STUDENT INFORMATION TABLE ================= -->
+
+            <div class="section">
+
+                <h2>Student Information Table</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Ali</td>
+                            <td>Khan</td>
+                            <td>ali@gmail.com</td>
+                            <td>Computer Science</td>
+                        </tr>
+
+                        <tr>
+                            <td>Ahmed</td>
+                            <td>Raza</td>
+                            <td>ahmed@gmail.com</td>
+                            <td>Software Engineering</td>
+                        </tr>
+
+                        <tr>
+                            <td>Fatima</td>
+                            <td>Malik</td>
+                            <td>fatima@gmail.com</td>
+                            <td>Artificial Intelligence</td>
+                        </tr>
+
+                        <tr>
+                            <td>Hassan</td>
+                            <td>Ali</td>
+                            <td>hassan@gmail.com</td>
+                            <td>Data Science</td>
+                        </tr>
+
+                        <tr>
+                            <td>Ayesha</td>
+                            <td>Ahmed</td>
+                            <td>ayesha@gmail.com</td>
+                            <td>Cyber Security</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- ================= IFRAME, VIDEO AND AUDIO ================= -->
+
+            <div class="section">
+
+                <h2>University Media</h2>
+
+                <div class="media-container">
+
+                    <!-- IFRAME -->
+
+                    <div>
+
+                        <h3>University Website / Information</h3>
+
+                        <iframe
+                            src="https://share.google/4nsVNyqSrdRWxFKPY"
+                            title="University Information">
+                        </iframe>
+
+                    </div>
+
+                    <!-- VIDEO -->
+
+                    <div>
+
+                        <h3>Admission Information Video</h3>
+
+                        <video controls>
+
+                            <source
+                                src="WhatsApp Video 2026-09-17 at 8.13.00 PM.mp4"
+                                type="video/mp4">
+
+                            Your browser does not support
+                            the video element.
+
+                        </video>
+
+                    </div>
+
+                    <!-- AUDIO -->
+
+                    <div>
+
+                        <h3>University Audio</h3>
+
+                        <audio controls>
+
+                            <source
+                                src="WhatsApp Video 2026-09-17 at 8.13.00 PM.mp3"
+                                type="audio/mpeg">
+
+                            Your browser does not support
+                            the audio element.
+
+                        </audio>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ================= HTML SOURCE CODE ================= -->
+
+            <div class="section code-section">
+
+                <h2>Complete HTML Code</h2>
+
+                <pre>
+<code>
+      &lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;
+      head&gt;&lt;meta charset="UTF-8"&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+      &lt;title&gt;University Admission Form&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+       &lt;header&gt;
+        &lt;h1&gt;University Admission Form&lt;
+        /h1&gt; &lt;p&gt; 
+        Apply for admission and start your academic journey with our university. &lt;
+        /p&gt; &lt;/header&gt; 
+        &lt;div class="container"&gt; 
+        &lt;div class="section"&gt; 
+        &lt;h2&gt;Student Admission Form&lt;/h2&gt; 
+        &lt;form action="#" method="post" enctype="multipart/form-data"&gt; 
+        &lt;h2&gt;Personal Information&lt;
+        /h2&gt; 
+        &lt;div class="form-group"&gt; 
+        &lt;label for="name"&gt;
+        Full Name:&lt;/label&gt; 
+        &lt;input type="text" id="name" name="name" placeholder="Enter your full name" required&gt;
+         &lt;/div&gt; &lt;div class="form-group"&gt;
+          &lt;label for="password"&gt;Password:&lt;
+          /label&gt; &lt;input type="password" id="password" name="password" placeholder="Create a password" required&gt;
+           &lt;/div&gt; &lt;div class="form-group"&gt; 
+           &lt;label for="dob"&gt;Date of Birth:&lt;/label&gt; 
+           &lt;input type="date" id="dob" name="dob" required&gt; 
+           &lt;/div&gt; &lt;div class="form-group"&gt; 
+           &lt;label&gt;Gender:&lt;/label&gt; 
+           &lt;div class="options"&gt; &lt;label&gt; &lt;
+           input type="radio" name="gender" value="Male" required&gt; 
+           Male &lt;/label&gt; &lt;label&gt; 
+           &lt;input type="radio" name="gender" value="Female"&gt; Female 
+           &lt;/label&gt; &lt;label&gt; &lt;input type="radio" name="gender" value="Other"&gt; 
+           Other &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;h2&gt;Contact Information&lt;/h2&gt; 
+           &lt;div class="form-group"&gt; &lt;label for="email"&gt;Email Address:&lt;/label&gt; 
+           &lt;input type="email" id="email" name="email" placeholder="example@gmail.com" required&gt; 
+           &lt;/div&gt; &lt;div class="form-group"&gt; &lt;label for="phone"&gt;Phone Number:&lt;/label&gt;
+            &lt;input type="tel" id="phone" name="phone" placeholder="03XX-XXXXXXX" required&gt;
+             &lt;/div&gt; &lt;div class="form-group"&gt; &lt;label for="city"&gt;City:&lt;/label&gt; 
+             &lt;select id="city" name="city" required&gt; &lt;option value=""&gt; -- Select City -- &lt;
+             /option&gt; &lt;option value="Islamabad"&gt; Islamabad &lt;/option&gt; 
+             &lt;option value="Lahore"&gt; Lahore &lt;/option&gt; &lt;option value="Karachi"&gt; Karachi &lt;/option&gt; &lt;option value="Peshawar"&gt; Peshawar &lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;div class="form-group"&gt; &lt;label for="address"&gt; Complete Address: &lt;/label&gt; &lt;textarea id="address" name="address" rows="4" placeholder="Enter your address" required&gt;&lt;/textarea&gt; &lt;/div&gt; &lt;h2&gt;Academic Information&lt;/h2&gt; &lt;div class="form-group"&gt; &lt;label for="marks"&gt; Previous Marks / Percentage: &lt;/label&gt; &lt;input type="number" id="marks" name="marks" min="0" max="100" placeholder="Enter percentage" required&gt; &lt;/div&gt; &lt;div class="form-group"&gt; &lt;label for="program"&gt; Preferred Program: &lt;/label&gt; &lt;select id="program" name="program" required&gt; &lt;option value=""&gt; -- Select Program -- &lt;/option&gt; &lt;option value="BS Computer Science"&gt; BS Computer Science &lt;/option&gt; &lt;option value="BS Software Engineering"&gt; BS Software Engineering &lt;/option&gt; &lt;option value="BS Artificial Intelligence"&gt; BS Artificial Intelligence &lt;/option&gt; &lt;option value="BS Data Science"&gt; BS Data Science &lt;/option&gt; &lt;option value="BS Cyber Security"&gt; BS Cyber Security &lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;h2&gt;Interests / Skills&lt;/h2&gt; &lt;div class="form-group"&gt; &lt;label&gt; Select your subjects or skills: &lt;/label&gt; &lt;div class="options"&gt; &lt;label&gt; &lt;input type="checkbox" name="skills[]" value="Programming"&gt; Programming &lt;/label&gt; &lt;label&gt; &lt;input type="checkbox" name="skills[]" value="Web Development"&gt; Web Development &lt;/label&gt; &lt;label&gt; &lt;input type="checkbox" name="skills[]" value="Database"&gt; Database &lt;/label&gt; &lt;label&gt; &lt;input type="checkbox" name="skills[]" value="AI"&gt; Artificial Intelligence &lt;/label&gt; &lt;label&gt; &lt;input type="checkbox" name="skills[]" value="Data Science"&gt; Data Science &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;h2&gt;Profile Picture&lt;/h2&gt; &lt;div class="form-group"&gt; &lt;label for="profile"&gt; Upload Profile Picture: &lt;/label&gt; &lt;input type="file" id="profile" name="profile" accept="image/*"&gt; &lt;/div&gt; &lt;h2&gt;Additional Information&lt;/h2&gt; &lt;div class="form-group"&gt; &lt;label for="reason"&gt; Why do you want to join this university? &lt;/label&gt; &lt;textarea id="reason" name="reason" rows="6" placeholder="Write your reason here..." required&gt;&lt;/textarea&gt; &lt;/div&gt; &lt;div class="buttons"&gt; &lt;button type="submit" class="submit-btn"&gt; Submit Application &lt;/button&gt; &lt;button type="reset" class="reset-btn"&gt; Reset Form &lt;/button&gt; &lt;/div&gt; &lt;/form&gt; &lt;/div&gt; &lt;div class="section"&gt; &lt;h2&gt;Student Information Table&lt;/h2&gt; &lt;table&gt; &lt;tr&gt; &lt;th&gt;First Name&lt;/th&gt; &lt;th&gt;Last Name&lt;/th&gt; &lt;th&gt;Email&lt;/th&gt; &lt;th&gt;Department&lt;/th&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Ali&lt;/td&gt; &lt;td&gt;Khan&lt;/td&gt; &lt;td&gt;ali@gmail.com&lt;/td&gt; &lt;td&gt;Computer Science&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Ahmed&lt;/td&gt; &lt;td&gt;Raza&lt;/td&gt; &lt;td&gt;ahmed@gmail.com&lt;/td&gt; &lt;td&gt;Software Engineering&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Fatima&lt;/td&gt; &lt;td&gt;Malik&lt;/td&gt; &lt;td&gt;fatima@gmail.com&lt;/td&gt; &lt;td&gt;Artificial Intelligence&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Hassan&lt;/td&gt; &lt;td&gt;Ali&lt;/td&gt; &lt;td&gt;hassan@gmail.com&lt;/td&gt; &lt;td&gt;Data Science&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Ayesha&lt;/td&gt; &lt;td&gt;Ahmed&lt;/td&gt; &lt;td&gt;ayesha@gmail.com&lt;/td&gt; &lt;td&gt;Cyber Security&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/div&gt; &lt;div class="section"&gt; &lt;h2&gt;University Information&lt;/h2&gt; &lt;iframe src="https://www.wikipedia.org/" title="University Information"&gt; &lt;/iframe&gt; &lt;/div&gt; &lt;div class="section"&gt; &lt;h2&gt;Admission Video&lt;/h2&gt; &lt;video controls&gt; &lt;source src="sample-video.mp4" type="video/mp4"&gt; Your browser does not support the video element. &lt;/video&gt; &lt;/div&gt; &lt;div class="section"&gt; &lt;h2&gt;University Audio&lt;/h2&gt; &lt;audio controls&gt; &lt;source src="sample-audio.mp3" type="audio/mpeg"&gt; Your browser does not support the audio element. &lt;/audio&gt; &lt;/div&gt; &lt;div class="section code-section"&gt; &lt;h2&gt;Complete HTML Code&lt;/h2&gt; &lt;pre&gt;&lt;code&gt; The complete HTML source code is displayed inside the PRE and CODE elements. &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;/div&gt; &lt;footer&gt; &lt;p&gt; &amp;copy; 2026 University Admission Portal &lt;/p&gt; &lt;/footer&gt; &lt;/body&gt; &lt;/html&gt;
+</code>
+</pre>
+
+            </div>
+
+        </div>
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <p>
+                &copy; 2026 University Admission Portal |
+                Designed for Student Registration.
+            </p>
+
+        </footer>
+
+    </body>
+</html>
